@@ -3,10 +3,17 @@ import env from "./env";
 import nextApp from "next";
 import express from "express";
 
+import getStore from "./store";
 
 const port = env.PORT;
 const app = nextApp({ dir:"./client", dev: env.isDev });
 const handle = app.getRequestHandler();
+
+const appName = env.HEROKU_APP_NAME;
+const isReviewApp = /-pr-/.test(appName);
+const siteURL = env.SITE_URL;
+
+const store = getStore();
 
 
 app.prepare().then(async() => {
