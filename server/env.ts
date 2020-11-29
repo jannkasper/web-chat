@@ -1,7 +1,7 @@
 import { cleanEnv, num, str } from "envalid";
 
 import path from 'path';
-require('dotenv').config({path: path.resolve(".env")})
+require('dotenv').config({path: path.resolve("../.env")})
 
 const env = cleanEnv(process.env, {
     PORT: num({ default: 4000 }),

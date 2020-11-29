@@ -11,7 +11,7 @@ const getStore = () => {
         const storeHost: string = env.STORE_HOST || env.REDIS_URL;
 
         switch (storeBackend) {
-            case "mameory":
+            case "memory":
                 store = new MemoryStore();
                 break;
             case "redis":
@@ -20,7 +20,6 @@ const getStore = () => {
                 break;
         }
     }
-
     return store;
 }
 
