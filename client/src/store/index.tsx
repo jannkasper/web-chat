@@ -1,16 +1,16 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-// import reducers from 'reducers';
+import {createStore, applyMiddleware, compose, PreloadedState} from 'redux';
+import reducers from '../reducers';
 import thunk from 'redux-thunk';
 
 const composeEnhancers =
-    process.env.NODE_ENV === 'production' ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+    process.env.NODE_ENV === 'production' ? compose : window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] || compose;
 
 const enabledMiddlewares = [thunk];
 
 const middlewares = applyMiddleware(...enabledMiddlewares);
 
-export default function configureStore(preloadedState) {
-    const store = createStore(null, preloadedState, composeEnhancers(middlewares));
+export default function configureStore(preloadedState?: PreloadedState<any>) {
+    const store = createStore(reducers, preloadedState, composeEnhancers(middlewares));
 
     if (module.hot) {
         module.hot.accept('../reducers', () => {
@@ -22,4 +22,3 @@ export default function configureStore(preloadedState) {
 
     return store;
 }
-
