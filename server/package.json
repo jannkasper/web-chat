@@ -1,7 +1,8 @@
 {
   "name": "web-chat-server",
   "version": "1.0.0",
-  "main": "server.ts",
+  "main": "index.js",
+  "type": "module",
   "license": "MIT",
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.9.6",
@@ -26,8 +27,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
-    "build": "./build.sh",
-    "dev": "ts-node server.ts",
+    "dev": "nodemon src/index.js --exec babel-node",
     "test": "jest",
     "test:watch": "jest --watch",
     "start": "node dist/src/index.js",

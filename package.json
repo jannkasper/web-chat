@@ -2,7 +2,7 @@
   "name": "web-chat",
   "version": "1.0.0",
   "description": "encrypted web chat",
-  "main": "./server/server.ts",
+  "main": "server/src/index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jannkasper/web-chat.git"

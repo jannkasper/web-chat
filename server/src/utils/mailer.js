@@ -1,19 +1,18 @@
-import env from "../env"
-import Mailgun from "mailgun-js"
-import {messages} from "mailgun-js"
+import env from "../env.js"
+import mailgunjs from "mailgun-js";
 
 const { MAILGUN_API_KEY, MAILGUN_DOMAIN } = env;
 
 const apiKey = MAILGUN_API_KEY;
 const domain = MAILGUN_DOMAIN;
 
-let mailgun: Mailgun;
+let mailgun;
 
 if (apiKey && domain) {
-    mailgun = require('mailgun-js')({ apiKey, domain });
+    mailgun = mailgunjs({ apiKey, domain });
 }
 
-export const send = (data: messages.SendData): void => {
+export const sendMail = data  => {
     if (!mailgun) {
         return;
     }

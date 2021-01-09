@@ -2,22 +2,19 @@
  * Memory store more for testing purpose than production use.
  */
 export class MemoryStore {
-    public store: any;
-    public hasSocketAdapter: boolean;
-
     constructor() {
         this.store = {};
         this.hasSocketAdapter = false;
     }
 
-    async get(key: string, field: string) {
+    async get(key, field) {
         if (this.store[key] === undefined || this.store[key][field] === undefined) {
             return null;
         }
         return this.store[key][field];
     }
 
-    async getAll(key: "abuse" | "rooms") {
+    async getAll(key) {
         if (this.store[key] === undefined) {
             return [];
         }
@@ -25,7 +22,7 @@ export class MemoryStore {
         return this.store[key];
     }
 
-    async set(key: "abuse" | "rooms", field: string, value) {
+    async set(key, field, value) {
         if (this.store[key] === undefined) {
             this.store[key] = {};
         }
@@ -33,7 +30,7 @@ export class MemoryStore {
         return 1;
     }
 
-    async del(key: "abuse" | "rooms", field: string) {
+    async del(key, field) {
         if (this.store[key] === undefined || this.store[key][field] === undefined) {
             return 0;
         }
@@ -41,7 +38,7 @@ export class MemoryStore {
         return 1;
     }
 
-    async inc(key: "abuse" | "rooms", field: string, inc: number = 1) {
+    async inc(key, field, inc = 1) {
         this.store[key][field] += inc;
         return this.store[key][field];
     }
