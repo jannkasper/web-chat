@@ -1,8 +1,8 @@
-const initialState: Activities = {
+const initialState = {
     items: [],
 };
 
-const activities = (state: Activities = initialState, action) => {
+const activities = (state = initialState, action) => {
     switch (action.type) {
         case 'CLEAR_ACTIVITIES':
             return {

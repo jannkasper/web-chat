@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
-import { Redirect } from 'react-router';
-import { Provider } from 'react-redux';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import shortId from 'shortid';
-import Home from './components/Home';
-import configureStore from './store';
-import { hasTouchSupport } from './utils/dom';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "react-simple-dropdown/styles/Dropdown.css";
+import "./stylesheets/app.sass";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import React, { Component } from "react";
+import { Redirect } from "react-router";
+import { Provider } from "react-redux";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import shortId from "shortid";
+import configureStore from "./store";
+import Home from "./components/Home";
+import { hasTouchSupport } from "./utils/dom.js";
 
 const store = configureStore();
 
 export default class Root extends Component {
     componentWillMount() {
         if (hasTouchSupport) {
-            document.body.classList.add('touch');
+            document.body.classList.add("touch");
         }
     }
 

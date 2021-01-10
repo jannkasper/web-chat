@@ -1,4 +1,4 @@
-import Home from './Home';
+import Home from './Home.js';
 import { connect } from 'react-redux';
 import {
     createUser,
@@ -10,11 +10,13 @@ import {
     toggleNotificationAllowed,
     toggleSocketConnected,
     setLanguage,
-    // receiveUnencryptedMessage,
-    // sendUnencryptedMessage,
-    // receiveEncryptedMessage,
-    // sendEncryptedMessage,
+    receiveUnencryptedMessage,
+    sendUnencryptedMessage,
+    receiveEncryptedMessage,
+    sendEncryptedMessage,
 } from '../../actions';
+// import WithNewMessageNotification from './WithNewMessageNotification';
+
 const mapStateToProps = state => {
     const me = state.room.members.find(m => m.id === state.user.id);
 
@@ -49,10 +51,10 @@ const mapDispatchToProps = {
     toggleNotificationAllowed,
     toggleSocketConnected,
     setLanguage,
-    // receiveUnencryptedMessage,
-    // sendUnencryptedMessage,
-    // receiveEncryptedMessage,
-    // sendEncryptedMessage,
+    receiveUnencryptedMessage,
+    sendUnencryptedMessage,
+    receiveEncryptedMessage,
+    sendEncryptedMessage,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

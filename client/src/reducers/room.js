@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-const initialState: Room = {
+const initialState = {
     members: [],
     id: '',
     isLocked: false,

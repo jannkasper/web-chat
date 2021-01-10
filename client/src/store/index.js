@@ -1,15 +1,15 @@
-import {createStore, applyMiddleware, compose, PreloadedState} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import reducers from '../reducers';
 import thunk from 'redux-thunk';
 
 const composeEnhancers =
-    process.env.NODE_ENV === 'production' ? compose : window["__REDUX_DEVTOOLS_EXTENSION_COMPOSE__"] || compose;
+    process.env.NODE_ENV === 'production' ? compose : window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const enabledMiddlewares = [thunk];
 
 const middlewares = applyMiddleware(...enabledMiddlewares);
 
-export default function configureStore(preloadedState?: PreloadedState<any>) {
+export default function configureStore(preloadedState) {
     const store = createStore(reducers, preloadedState, composeEnhancers(middlewares));
 
     if (module.hot) {

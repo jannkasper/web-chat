@@ -1,11 +1,11 @@
-const initialState: User = {
+const initialState = {
     privateKey: {},
     publicKey: {},
     username: '',
     id: '',
 };
 
-const user = (state: User = initialState, action) => {
+const user = (state = initialState, action) => {
     switch (action.type) {
         case 'CREATE_USER':
             return {
