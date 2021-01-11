@@ -1,7 +1,7 @@
 {
   "aboutButton": "Su di noi",
   "aboutHeader": "Su di noi",
-  "agreement": "Usando Darkwire, accetti la nostra Politica di utilizzo accettabile e i Termini di servizio",
+  "agreement": "Usando Darkweb, accetti la nostra Politica di utilizzo accettabile e i Termini di servizio",
   "copyButtonTooltip": "Copiato",
   "copyRoomHeader": "Questa stanza",
   "downloadFile": "Scarica {filename}",
@@ -34,7 +34,7 @@
   "userJoined": "{username} si è unito",
   "userLeft": "{username} è uscito",
   "userSentFile": "{username} ha inviato un file.",
-  "welcomeHeader": "Benvenuto in Darkwire v2.0",
+  "welcomeHeader": "Benvenuto in Darkweb v2.0",
   "welcomeModalCTA": "Ok",
-  "helpTranslate": "Aiutaci a tradurre Darkwire!"
+  "helpTranslate": "Aiutaci a tradurre Darkweb!"
 }

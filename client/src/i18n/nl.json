@@ -1,7 +1,7 @@
 {
   "aboutButton": "Wat betreft",
   "aboutHeader": "Wat betreft",
-  "agreement": "Door Darkwire te gebruiken, gaat u akkoord met ons Beleid voor acceptabel gebruik en onze Servicevoorwaarden",
+  "agreement": "Door Darkweb te gebruiken, gaat u akkoord met ons Beleid voor acceptabel gebruik en onze Servicevoorwaarden",
   "copyButtonTooltip": "gekopieerde",
   "copyRoomHeader": "Deze kamer",
   "downloadFile": "Download {filename}",
@@ -34,7 +34,7 @@
   "userJoined": "{username} is lid geworden",
   "userLeft": "{username} over",
   "userSentFile": "{username} heeft u een bestand gestuurd.",
-  "welcomeHeader": "Welkom bij Darkwire v2.0",
+  "welcomeHeader": "Welkom bij Darkweb v2.0",
   "welcomeModalCTA": "OK",
-  "helpTranslate": "Help ons Darkwire te vertalen!"
+  "helpTranslate": "Help ons Darkweb te vertalen!"
 }

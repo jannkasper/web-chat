@@ -1,5 +1,5 @@
-import Home from './Home.js';
-import { connect } from 'react-redux';
+import Home from "./Home.js";
+import { connect } from "react-redux";
 import {
     createUser,
     openModal,
@@ -14,12 +14,11 @@ import {
     sendUnencryptedMessage,
     receiveEncryptedMessage,
     sendEncryptedMessage,
-} from '../../actions';
-// import WithNewMessageNotification from './WithNewMessageNotification';
+} from "../../actions";
+import WithNewMessageNotification from "./WithNewMessageNotification";
 
 const mapStateToProps = state => {
     const me = state.room.members.find(m => m.id === state.user.id);
-
     return {
         activities: state.activities.items,
         userId: state.user.id,
@@ -57,4 +56,4 @@ const mapDispatchToProps = {
     sendEncryptedMessage,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default WithNewMessageNotification(connect(mapStateToProps, mapDispatchToProps)(Home));

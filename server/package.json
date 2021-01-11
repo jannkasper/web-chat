@@ -30,7 +30,7 @@
     "dev": "nodemon src/index.js --exec babel-node",
     "test": "jest",
     "test:watch": "jest --watch",
-    "start": "node dist/src/index.js",
+    "start": "node ./src/index.js",
     "lint": "eslint src"
   },
   "devDependencies": {

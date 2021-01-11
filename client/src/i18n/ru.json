@@ -2,14 +2,14 @@
   "newRoomButton": "Новый Чат",
   "lockedRoom": "{username} заблокировал(-а) чат",
   "unlockedRoom": "{username} разблокировал(-а) чат",
-  "agreement": "Используя Darkwire, вы соглашаетесь с нашей Политикой Приемливого Использования и Условиями Пользования",
+  "agreement": "Используя Darkweb, вы соглашаетесь с нашей Политикой Приемливого Использования и Условиями Пользования",
   "typePlaceholder": "Печатайте здесь",
   "aboutButton": "О нас",
   "settingsButton": "Настройки",
   "settings": "Настройки",
   "aboutHeader": "О нас",
   "copyButtonTooltip": "Скопировано",
-  "welcomeHeader": "Добро пожаловать на Darkwire v2.0",
+  "welcomeHeader": "Добро пожаловать на Darkweb v2.0",
   "sentFile": "Вы отправили {filename}",
   "userJoined": "{username} присоеденился(-а)",
   "userLeft": "{username} вышел(-а)",
@@ -37,5 +37,5 @@
   "desktopNotificationBlocked": "Уведомления для Рабочего стола были отклонены",
   "welcomeModalCTA": "Ок",
   "lockedRoomHeader": "Этот чат заблокирован",
-  "helpTranslate": "Помогите нам перевести Darkwire!"
+  "helpTranslate": "Помогите нам перевести Darkweb!"
 }

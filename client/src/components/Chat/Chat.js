@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import sanitizeHtml from "sanitize-html";
 import { CornerDownRight } from "react-feather";
 
-// import FileTransfer from "../FileTransfer";
+import FileTransfer from "../FileTransfer";
 import { getSelectedText, hasTouchSupport } from "../../utils/dom";
 
 export class Chat extends Component {
@@ -263,7 +263,7 @@ export class Chat extends Component {
             onChange={this.handleInputChange.bind(this)}
         />
                 <div className="input-controls">
-                    {/*<FileTransfer sendEncryptedMessage={this.props.sendEncryptedMessage} />*/}
+                    <FileTransfer sendEncryptedMessage={this.props.sendEncryptedMessage} />
                     {touchSupport && (
                         <button
                             onClick={this.handleSendClick.bind(this)}

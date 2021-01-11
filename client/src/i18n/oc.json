@@ -2,14 +2,14 @@
   "newRoomButton": "Nòva sala",
   "lockedRoom": "{username} a clavat la sala",
   "unlockedRoom": "{username} a desclavat la sala",
-  "agreement": "En utilizar Darkwire, acceptatz nòstra Politica d’Utilizacion e Condicion d’Utilizacion",
+  "agreement": "En utilizar Darkweb, acceptatz nòstra Politica d’Utilizacion e Condicion d’Utilizacion",
   "typePlaceholder": "Escrivètz aquí",
   "aboutButton": "A prepaus",
   "settingsButton": "Paramètres",
   "settings": "Paramètres",
   "aboutHeader": "A prepaus",
   "copyButtonTooltip": "Copiat",
-  "welcomeHeader": "Benvengut a Darkwire v2.0",
+  "welcomeHeader": "Benvengut a Darkweb v2.0",
   "sentFile": "Avètz enviat {filename}",
   "userJoined": "{username} a rejonch",
   "userLeft": "{username} a quitat",
@@ -36,5 +36,5 @@
   "desktopNotification": "Desktop Notification",
   "welcomeModalCTA": "D’acòrdi",
   "lockedRoomHeader": "Aquesta sala es clavada",
-  "helpTranslate": "Ajudatz-nos a traduire Darkwire !"
+  "helpTranslate": "Ajudatz-nos a traduire Darkweb !"
 }

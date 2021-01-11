@@ -49,7 +49,7 @@ router.post("/abuse/:roomId", koaBody, async ctx => {
             sendMail({
                 from: env.ABUSE_FROM_EMAIL_ADDRESS,
                 to: env.ABUSE_TO_EMAIL_ADDRESS,
-                subject: "Darkwire Abuse Notification",
+                subject: "Darkweb Abuse Notification",
                 text: `Room ID: ${roomId}`,
             })
         }
@@ -129,7 +129,7 @@ io.on("connection", async socket => {
 
 const init = async () => {
     server.listen(PORT, () => {
-        console.log(`Darkwire is online at port ${PORT}`);
+        console.log(`Darkweb is online at port ${PORT}`);
     });
 
     pollForInactiveRooms();

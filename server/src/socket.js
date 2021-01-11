@@ -79,7 +79,6 @@ export default class Socket {
                     createdAt: Date.now(),
                 };
             }
-
             const newRoom = {
                 ...room,
                 users: [
@@ -128,7 +127,7 @@ export default class Socket {
             })
         });
 
-        socket.on("disconnect", () => tihs.handleDisconnect(socket));
+        socket.on("disconnect", () => this.handleDisconnect(socket));
 
         socket.on("USER_DISCONNECT", () => this.handleDisconnect(socket));
     }
@@ -139,7 +138,7 @@ export default class Socket {
         const newRoom = {
             ...room,
             users: (room.users || [])
-                .filter(u => u.socketId !== socked.id)
+                .filter(u => u.socketId !== socket.id)
                 .map((u, index) => ({
                     ...u,
                     isOwner: index === 0
