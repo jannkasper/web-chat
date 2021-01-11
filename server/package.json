@@ -27,6 +27,7 @@
     "uuid": "^3.3.2"
   },
   "scripts": {
+    "build": "./build.sh",
     "dev": "nodemon src/index.js --exec babel-node",
     "test": "jest",
     "test:watch": "jest --watch",

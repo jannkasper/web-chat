@@ -83,7 +83,7 @@ class Settings extends Component {
                     </h4>
                     <p>
                         <a
-                            href="https://github.com/darkwire/darkwire.io/blob/master/client/README.md#translations"
+                            href="https://github.com/jannkasper/web-chat/blob/master/client/README.md#translations"
                             rel="noopener noreferrer"
                             target="_blank"
                         >
