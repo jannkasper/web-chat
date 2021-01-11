@@ -1,4 +1,6 @@
-import env from "./env.js";
+import dotenv from 'dotenv'
+dotenv.config()
+
 import http from "http";
 import https from "https";
 import Koa from "koa";
@@ -14,17 +16,17 @@ import { pollForInactiveRooms } from "./inactive_rooms.js";
 import { getRoomIdHash } from "./utils/index.js"
 import getStore from "./store/index.js";
 
-const environment = env.NODE_ENV || "development";
+const environment = process.env.NODE_ENV || "development";
 
 const app = new Koa();
-const PORT = env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 const router = new Router();
 const koaBody = KoaBody();
 
-const appName = env.HEROKU_APP_NAME;
+const appName = process.env.HEROKU_APP_NAME;
 const isReviewApp = /-pr-/.test(appName);
-const siteURL = env.SITE_URL;
+const siteURL = process.env.SITE_URL;
 
 const store = getStore();
 
@@ -43,12 +45,12 @@ router.post("/abuse/:roomId", koaBody, async ctx => {
 
     roomId = roomId.trim();
 
-    if (env.ABUSE_FROM_EMAIL_ADDRESS && env.ABUSE_TO_EMAIL_ADDRESS) {
+    if (process.env.ABUSE_FROM_EMAIL_ADDRESS && process.env.ABUSE_TO_EMAIL_ADDRESS) {
         const abuseForRoomExists = await store.get("abuse", roomId);
         if (!abuseForRoomExists) {
             sendMail({
-                from: env.ABUSE_FROM_EMAIL_ADDRESS,
-                to: env.ABUSE_TO_EMAIL_ADDRESS,
+                from: process.env.ABUSE_FROM_EMAIL_ADDRESS,
+                to: process.env.ABUSE_TO_EMAIL_ADDRESS,
                 subject: "Darkweb Abuse Notification",
                 text: `Room ID: ${roomId}`,
             })
@@ -62,7 +64,7 @@ router.post("/abuse/:roomId", koaBody, async ctx => {
 
 app.use(router.routes());
 
-const apiHost = env.API_HOST;
+const apiHost = process.env.API_HOST;
 const cspDefaultSrc = `self"${apiHost ? `http://${apiHost} wss://${apiHost}` : ''}`;
 
 function setStaticFileHeaders(ctx) {
@@ -96,7 +98,7 @@ if (clientDistDirectory) {
     });
 }
 
-const protocol = (env.PROTOCOL || "http") === "http" ? http : https;
+const protocol = (process.env.PROTOCOL || "http") === "http" ? http : https;
 
 const server = protocol.createServer(app.callback());
 const io = Io(server, {
