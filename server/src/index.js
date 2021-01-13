@@ -65,7 +65,7 @@ router.post("/abuse/:roomId", koaBody, async ctx => {
 app.use(router.routes());
 
 const apiHost = process.env.API_HOST;
-const cspDefaultSrc = `self"${apiHost ? `http://${apiHost} wss://${apiHost}` : ''}`;
+const cspDefaultSrc = `'self'${apiHost ? ` https://${apiHost} wss://${apiHost}` : ''}`;
 
 function setStaticFileHeaders(ctx) {
     ctx.set({
@@ -82,6 +82,8 @@ function setStaticFileHeaders(ctx) {
 const clientDistDirectory = process.env.CLIENT_DIST_DIRECTORY;
 if (clientDistDirectory) {
     app.use(async (ctx, next) => {
+        console.log("1", cspDefaultSrc);
+        console.log("2", clientDistDirectory);
         setStaticFileHeaders(ctx);
         await koaStatic(clientDistDirectory, {
             maxage: ctx.req.url === "/" ? 60 * 1000 : 365 * 24 * 60 * 60 * 1000 // one minute in ms for html doc, one year for css, js, etc
@@ -89,6 +91,8 @@ if (clientDistDirectory) {
     });
 
     app.use(async ctx => {
+        console.log("3", cspDefaultSrc);
+        console.log("4", clientDistDirectory);
         setStaticFileHeaders(ctx);
         await koaSend(ctx, "index.html", { root: clientDistDirectory });
     });
